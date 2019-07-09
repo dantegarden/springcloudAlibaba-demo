@@ -1,0 +1,11 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: nacos-discovery-gateway-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.99.100:8848
+        metadata: gateway

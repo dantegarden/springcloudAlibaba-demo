@@ -1,0 +1,10 @@
+server:
+  port: 8051
+
+spring:
+  application:
+    name: nacos-discovery-consumer-feign
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.99.100:8848
