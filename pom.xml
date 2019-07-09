@@ -14,6 +14,7 @@
         <module>nacos-discovery-consumer</module>
         <module>nacos-discovery-consumer-feign</module>
         <module>nacos-discovery-gateway-server</module>
+        <module>nacos-discovery-config-client</module>
     </modules>
 
 </project>

@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/nacos-discovery-provider/pom.xml" />
         <option value="$PROJECT_DIR$/nacos-discovery-consumer-feign/pom.xml" />
         <option value="$PROJECT_DIR$/nacos-discovery-gateway-server/pom.xml" />
+        <option value="$PROJECT_DIR$/nacos-discovery-config-client/pom.xml" />
       </list>
     </option>
   </component>

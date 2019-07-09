@@ -1,0 +1,18 @@
+#最早加载的配置文件，找到会在控制台打印dataId
+spring:
+  application:
+    name: nacos-discovery-config-client
+  cloud:
+    nacos:
+      #默认会在启动时去注册中心拿nacos-discovery-config-client.properties文件
+      config:
+        server-addr: 192.168.99.100:8848
+        #默认是properties，若设置为yml，则会去寻找application.name.yml
+        file-extension: yml
+        #通过组来划分配置文件，不同组可有同名的配置文件。默认没有组，放在DEFAULT_GROUP下。
+        group: MY_GROUP
+        #用命名空间做更高级别的隔离，不填默认使用public，此处应填写命名空间ID
+        namespace: fee76e06-0188-4462-9254-2b3143f42649
+  #有配置此项，则会读nacos-discovery-config-client-dev.yml，如果不存在则读nacos-discovery-config-client.yml
+  profiles:
+    active: dev

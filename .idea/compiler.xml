@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="nacos-discovery-provider" />
         <module name="nacos-discovery-gateway-server" />
+        <module name="nacos-discovery-config-client" />
         <module name="nacos-discovery-consumer" />
         <module name="nacos-discovery-consumer-feign" />
       </profile>
@@ -15,6 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="nacos-discovery-config-client" options="-parameters" />
       <module name="nacos-discovery-consumer" options="-parameters" />
       <module name="nacos-discovery-consumer-feign" options="-parameters" />
       <module name="nacos-discovery-gateway-server" options="-parameters" />
