@@ -1,0 +1,57 @@
+##从nacos配置中心读取配置，这里全部注释掉
+#server:
+#  port: 8091
+#spring:
+#  application:
+#    name: service-order
+#  zipkin:
+#    base-url: http://192.168.3.200:9411/ #zipkin server地址
+#    discoveryClientEnabled: false #让nacos把它当成一个url，而非服务名
+#  sleuth:
+#    sampler:
+#      probability: 1.0 #采样百分比
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: 123456
+#      url: jdbc:mysql://192.168.3.200:3306/springcloud_alibaba_demo?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+#      initial-size: 5
+#      max-active: 20
+#      min-idle: 5
+#      max-wait: 60000
+#      validation-query: SELECT 1
+#      filters: stat,wall,config
+#      web-stat-filter:
+#        enabled: true
+#      stat-view-servlet:
+#        enabled: true
+#        url-pattern: "/druid/*"
+#  jpa:
+#    properties:
+#      hibernate:
+#        hbm2ddl:
+#          auto: update
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect  #生成表的默认引擎是innodb
+#  cloud:
+#    #nacos 服务注册
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.3.200:8848
+#    #sentinel 容错控制
+#    sentinel:
+#      transport:
+#        port: 9998 #跟控制台通信的端口，随意指定一个未使用的端口即可
+#        dashboard: 192.168.3.200:9999 #指定控制台服务的地址
+#      filter:
+#        enabled: false
+##开启feign对sentinel的支持
+#feign:
+#  sentinel:
+#    enabled: true
+##RocketMQ
+#rocketmq:
+#  name-server: 192.168.3.200:9876 #NameServer的地址
+#  producer:
+#    group: shop-order #生产者组名

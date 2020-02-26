@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: service-order
+  #nacos 服务注册
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.3.200:8848 #配置中心地址
+        file-extension: yml #配置文件格式
+        group: LOCAL_GROUP  #不配默认是DEFAULT_GROUP'
+        ext-config:
+          - data-id: web-service-${spring.profiles.active}.yml
+            group: GLOBAL_GROUP
+            refresh: true #是否允许刷新
+          - data-id: datasource-${spring.profiles.active}.yml
+            group: GLOBAL_GROUP
+            refresh: true
+    alibaba:
+      seata:
+        tx-service-group: fsp_tx_group
+  profiles:
+    active: dev #开发环境

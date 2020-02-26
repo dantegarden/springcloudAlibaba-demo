@@ -1,0 +1,33 @@
+#从nacos配置中心拉取配置，这里全部注释
+#server:
+#  port: 8100
+#spring:
+#  application:
+#    name: api-gateway
+#  zipkin:
+#    base-url: http://192.168.3.200:9411/ #zipkin server地址
+#    discoveryClientEnabled: false #让nacos把它当成一个url，而非服务名
+#  sleuth:
+#    sampler:
+#      probability: 1.0 #采样百分比
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.3.200:8848 #nacos 服务注册
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true #让gateway从nacos中获取服务信息
+#      routes: #路由-转发规则数组
+#        - id: svc-product #当前路由的唯一标识（默认uuid）
+#          uri: lb://service-product #lb指的是从nacos中按照名称获取微服务，并遵循负载均衡策略
+#          predicates: #断言数组（条件判断，满足条件时才转发）
+#            - Path=/product-serv/** #当请求路径满足Path指定的规则时，此路由才会被转发
+#          filters: #过滤器（在请求传递过程中，对请求做一些手脚）
+#            - StripPrefix=1 #在请求转发前去掉一层路径（这里是去掉/product-serv）
+#        - id: svc-order
+#          uri: lb://service-order
+#          predicates:
+#            - Path=/order-serv/**
+#          filters:
+#            - StripPrefix=1
