@@ -66,7 +66,10 @@ public class TestController {
         return Result.ok(msg6);
     }
 
-    @Autowired
-    private ConfigurableApplicationContext applicationContext;
+    @RequestMapping("/ssss")
+    public Result test(){
+        testService.testException();
+        return Result.ok();
+    }
 
 }

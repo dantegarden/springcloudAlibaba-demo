@@ -45,4 +45,14 @@ public class TestServiceImpl implements TestService {
         return source;
     }
 
+    @Override
+    public String testException(){
+//        try {
+            int i = 1/0;
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+        return "";
+    }
+
 }

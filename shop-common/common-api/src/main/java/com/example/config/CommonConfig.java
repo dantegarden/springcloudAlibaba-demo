@@ -14,7 +14,8 @@ import org.springframework.web.client.RestTemplate;
 @ComponentScans({
     @ComponentScan(value = "com.example.sentinel"),
     @ComponentScan(value = "com.example.handler"),
-    @ComponentScan(value = "com.example.processor")
+    @ComponentScan(value = "com.example.processor"),
+    @ComponentScan(value = "com.example.aspect")
 })
 @Import(DataSourceProxyConfig.class)
 public class CommonConfig {

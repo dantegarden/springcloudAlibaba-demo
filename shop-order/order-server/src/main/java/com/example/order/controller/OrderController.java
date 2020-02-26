@@ -1,6 +1,7 @@
 package com.example.order.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.example.annotation.DistributedTransactional;
 import com.example.bean.Result;
 import com.example.exception.BizException;
 import com.example.order.domain.Order;
@@ -35,6 +36,7 @@ public class OrderController {
     private RocketMQTemplate rocketMQTemplate;
 
     @GlobalTransactional
+//    @DistributedTransactional //自定义注解，作用同@GlobalTransactional，手动开始/关闭分布式事务
     @PostMapping("/prod")
     public Result order(@RequestParam("pid") Long pid, @RequestParam Integer number){
         log.info("收到商品【{}】的下单请求", pid);
