@@ -6,15 +6,92 @@
 
     <groupId>com.example</groupId>
     <artifactId>springcloud-alibaba-demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
+    <name>springcloudAlibaba-demo</name>
+    <description>Demo project for Spring Cloud Alibaba</description>
+
+    <developers>
+        <developer>
+            <name>lij</name>
+            <email>761043617@qq.com</email>
+        </developer>
+    </developers>
+
+    <!-- 父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+    </parent>
+
+    <!--子模块-->
     <modules>
-        <module>nacos-discovery-provider</module>
-        <module>nacos-discovery-consumer</module>
-        <module>nacos-discovery-consumer-feign</module>
-        <module>nacos-discovery-gateway-server</module>
-        <module>nacos-discovery-config-client</module>
+        <module>shop-common</module>
+        <module>shop-user</module>
+        <module>shop-product</module>
+        <module>shop-order</module>
     </modules>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
+        <lombok.version>1.18.8</lombok.version>
+    </properties>
+
+    <!-- 依赖版本锁定 -->
+    <dependencyManagement>
+        <dependencies>
+            <!--支持Spring Boot 2.1.X-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
