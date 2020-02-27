@@ -1,6 +1,7 @@
 package com.example.user.service.impl;
 
 import com.example.user.dao.UserDao;
+import com.example.user.domain.User;
 import com.example.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,4 +18,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
+
+    @Override
+    public User findByUsernameAndPassword(String username, String password) {
+        return userDao.findByUsernameAndPassword(username, password);
+    }
 }

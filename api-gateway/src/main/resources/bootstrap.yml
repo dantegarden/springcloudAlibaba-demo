@@ -5,7 +5,7 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 192.168.3.200:7000 #配置中心地址
+        server-addr: 192.168.3.200:8848 #配置中心地址
         file-extension: yml #配置文件格式
         group: LOCAL_GROUP  #不配默认是DEFAULT_GROUP'
         ext-config:

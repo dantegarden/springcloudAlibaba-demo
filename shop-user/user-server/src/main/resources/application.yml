@@ -42,3 +42,13 @@
 ##RocketMQ
 #rocketmq:
 #  name-server: 192.168.3.200:9876
+#spring:
+#  redis:
+#    host: 192.168.3.200
+#    port: 6379
+#    password: 123456
+#
+## 自定义属性 保存在cookies的token名和过期时间
+#user:
+#  token-key: X-Token
+#  expire: 7200

@@ -31,3 +31,8 @@
 #            - Path=/order-serv/**
 #          filters:
 #            - StripPrefix=1
+#spring:
+#  redis:
+#    host: 192.168.3.200
+#    port: 6379
+#    password: 123456
