@@ -12,7 +12,6 @@
         <module name="product-client" />
         <module name="user-common" />
         <module name="api-gateway" />
-        <module name="shop-user" />
         <module name="product-common" />
         <module name="order-server" />
         <module name="common-core" />
@@ -48,7 +47,7 @@
       <module name="product-common" options="-parameters" />
       <module name="product-server" options="-parameters" />
       <module name="shop-common" options="" />
-      <module name="shop-user" options="-parameters" />
+      <module name="shop-user" options="" />
       <module name="user-common" options="-parameters" />
       <module name="user-server" options="-parameters" />
     </option>
