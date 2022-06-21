@@ -13,7 +13,7 @@
 
     <properties>
         <druid.version>1.1.13</druid.version>
-        <mysql-connector.version>5.1.47</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <rocketmq.version>2.0.2</rocketmq.version>
         <rocketmq-client.version>4.4.0</rocketmq-client.version>
         <seata-all.version>1.1.0</seata-all.version>
